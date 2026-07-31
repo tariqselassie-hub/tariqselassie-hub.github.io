@@ -1,0 +1,8 @@
+base_url = "https://tariqselassie-hub.github.io"
+title = "System Engineering Portfolio"
+description = "System engineering portfolio and research"
+default_language = "en"
+
+[extra]
+author_name = "Tariq Selassie"
+author_email = "tariqselassie@gmail.com"

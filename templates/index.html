@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h1>{{ page.title | default(value=config.title, true=true) }}</h1>
+    <p>{{ page.description | default(value=config.description, true=true) }}</p>
+</section>
+
+<section class="section">
+    <h2>Selected Work</h2>
+    <div class="grid">
+        <article class="card">
+            <h3><a href="{{ get_url(path='/projects/') }}#zenith">Zenith Research Division</a></h3>
+            <p>VSA/HDC Rust workspace, kernel bring-up, NASME obfuscation, and hard-separation workspace hygiene.</p>
+        </article>
+        <article class="card">
+            <h3><a href="{{ get_url(path='/projects/') }}#vek2urity">Vek2urity</a></h3>
+            <p>Standalone passive IDS workspace with bridge export contracts and future main-system compatibility.</p>
+        </article>
+        <article class="card">
+            <h3><a href="{{ get_url(path='/projects/') }}#guddalm">GuddaLM / Senojian</a></h3>
+            <p>Dataset integration, benchmark evaluation, and PyTorch-based quantum-inspired HDC prototypes.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Now</h2>
+    <ul>
+        <li>Scaffolding this portfolio with Zola</li>
+        <li>Documenting vek2urity passive capture workflow</li>
+        <li>Extending Zenith VSA/HDC benchmarks</li>
+    </ul>
+</section>
+{% endblock content %}

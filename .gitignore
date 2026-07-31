@@ -1,0 +1,4 @@
+# Only ignore local build output; GitHub Actions handles the deploy target
+/public/
+.DS_Store
+Thumbs.db

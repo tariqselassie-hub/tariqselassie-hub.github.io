@@ -1,0 +1,79 @@
+/* Zola site styles */
+:root {
+  --bg: #0b0f14;
+  --panel: #111820;
+  --text: #e6eaf0;
+  --muted: #9aa3b2;
+  --accent: #7ee0c5;
+  --accent-2: #5aa9ff;
+  --border: #1d2530;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+header nav,
+footer {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 20px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  margin-top: 40px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.hero {
+  padding: 80px 24px 60px;
+  max-width: 900px;
+}
+
+.section {
+  padding: 32px 24px;
+  max-width: 900px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.project + .project {
+  margin-top: 44px;
+}
+
+pre, code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+pre {
+  background: #0d1219;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  overflow: auto;
+}
