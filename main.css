@@ -79,8 +79,13 @@ pre, code {
 }
 
 .logo {
-  max-height: 120px;
+  max-height: 64px;
   max-width: 100%;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: -14px;
 }
 
 .terminal {
