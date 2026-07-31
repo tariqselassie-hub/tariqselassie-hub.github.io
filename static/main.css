@@ -66,6 +66,14 @@ nav a {
   margin-top: 44px;
 }
 
+figure.project-media img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin: 10px 10px 0 0;
+}
+
 pre, code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
