@@ -70,10 +70,16 @@ pre, code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
-pre {
-  background: #0d1219;
+.logo {
+  max-height: 120px;
+  max-width: 100%;
+}
+
+.terminal {
+  background: #0a0e14;
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 14px 16px;
   overflow: auto;
+  margin-top: 18px;
 }
