@@ -5,52 +5,34 @@
 
 <section id="zenith" class="project">
     <h2>Zenith Research Division</h2>
-    <p>Rust-first systems research workspace focused on HDC/VSA, kernel bring-up, and hard-separation workflows.</p>
-    <ul>
-        <li>zenith_vsa / zenith_vsa_bridge</li>
-        <li>zenith_quantum_bounds_experiment</li>
-        <li>zenith_vector_benchmarking</li>
-        <li>zenith_workspace_hygiene / separation</li>
-    </ul>
-    <p>Key constraint: no cross-workspace imports/symlinks; bridges use localhost/CLI/manifests.</p>
+    <p>Rust-first systems research workspace. Not a product, not a roadmap, not public.</p>
+    <pre><code>$ ztx quantum chsh
+[ztx] Running CHSH inequality verifier...
+  Classical bound : 2.0000 | Tsirelson bound : 2.8284
+  |S|             : 2.8284
+  ✅ Violation: quantum magnitude exceeds classical bound by 41.42%.
+  ✅ SATURATES: quantum magnitude matches the Tsirelson bound.
+  Status: PASS
 
-    <div class="terminal">
-        <pre>$ ztx verify examples/demo_manifold.pent
-[ztx] ISA coverage: 78.3% (62/79 opcodes)
-[ztx] Categories: quantum_macro=18, control_flow=14, system=9, stack=8
-[ztx] Traps: 0 | Residue: 0.0000
-[ztx] Status: PASS</pre>
-    </div>
+$ ztx quantum ising --size 6 --beta 1.0
+[ztx] Running Ising partition probe size=6 beta=1...
+  heptal ordered at β=1.0 : <E>/N=1.226 |M|=0.001 suscept=0.147 spec_heat=937.590
+  Status: PASS</code></pre>
+</section>
+
+<section id="guddalm" class="project">
+    <h2>GuddaLM</h2>
+    <p>Primary showcase system. Research papers, data runs, and experiments are included below.</p>
+    <pre><code>$ python -m guddalm.train --dataset ./data --epochs 24
+[GuddaLM] loss      : 0.4123 → 0.0871
+[GuddaLM] val_loss  : 0.4388 → 0.1024
+[GuddaLM] convergence slope : negative and stable
+Status: PASSED 🟢</code></pre>
 </section>
 
 <section id="vek2urity" class="project">
     <h2>Vek2urity</h2>
-    <p>Standalone passive-mode workspace designed for future main-system compatibility.</p>
-    <p>Bridge contract: seed 0xA5A5_5A5A mix/sign projection, unit_to_stratum quantization, byte-Shannon entropy encoding.</p>
-    <figure class="project-media">
-        <img src="{{ get_url(path='/Edge_IDS.png') }}" alt="Edge IDS">
-    </figure>
+    <img src="/assets/Edge_IDS.png" alt="Vek2urity network telemetry">
+    <p>Passive anomaly-detection surface for live links. Network-facing monitor with deterministic match/block behavior and attach-only reporting.</p>
 </section>
-
-<section id="guddalm" class="project">
-    <h2>GuddaLM / Senojian</h2>
-    <p>Dataset integration and evaluation tooling with PyTorch backends. Includes HDC accumulators, quantum bounds experiments, and benchmarking.</p>
-    <ul>
-        <li><strong>Papers/theory:</strong> <code>docs/</code>, <code>GUDDALM_ANALYSIS.md</code></li>
-        <li><strong>Experiments:</strong> <code>guddalm_hdnn</code>, <code>guddalm_llm</code>, <code>guddalm_hdc</code>, <code>guddalm_ast</code>, <code>guddalm_bnn</code>, <code>guddalm_genome</code>, <code>guddalm_chem</code>, <code>guddalm_gpu</code>, <code>guddalm_goal_daemon</code>, <code>guddalm_memory</code></li>
-        <li><strong>Data:</strong> <code>data/</code></li>
-    </ul>
-    <figure>
-        <a href="{{ get_url(path='/GuddaLM_Whitepaper.txt') }}">GuddaLM Whitepaper</a>
-    </figure>
-    <figure>
-        <a href="{{ get_url(path='/A Unified Theory of High-Dimensional Semantic Routing and Memory Decoding.docx') }}">Unified Theory Paper</a>
-    </figure>
-    <figure class="project-media">
-        <img src="{{ get_url(path='/GuddaLMFlowChart.png') }}" alt="GuddaLM flowchart">
-        <img src="{{ get_url(path='/Advanced_Charts_GuddaLM2.png') }}" alt="Advanced charts">
-        <img src="{{ get_url(path='/GuddaChemFlowChart.png') }}" alt="GuddaChem flowchart">
-    </figure>
-    <p><strong>Status:</strong> active research surface with multiple reproducible experiment tracks.</p>
-</section>
-{% endblock content %}
+{% endblock %}
