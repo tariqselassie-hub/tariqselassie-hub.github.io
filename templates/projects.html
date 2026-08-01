@@ -13,11 +13,14 @@
         <li>zenith_workspace_hygiene / separation</li>
     </ul>
     <p>Key constraint: no cross-workspace imports/symlinks; bridges use localhost/CLI/manifests.</p>
-    <figure class="project-media">
-        <img src="{{ get_url(path='/GuddaLMFlowChart.png') }}" alt="GuddaLM flowchart">
-        <img src="{{ get_url(path='/Advanced_Charts_GuddaLM2.png') }}" alt="Advanced charts">
-        <img src="{{ get_url(path='/GuddaChemFlowChart.png') }}" alt="GuddaChem flowchart">
-    </figure>
+
+    <div class="terminal">
+        <pre>$ ztx verify examples/demo_manifold.pent
+[ztx] ISA coverage: 78.3% (62/79 opcodes)
+[ztx] Categories: quantum_macro=18, control_flow=14, system=9, stack=8
+[ztx] Traps: 0 | Residue: 0.0000
+[ztx] Status: PASS</pre>
+    </div>
 </section>
 
 <section id="vek2urity" class="project">
@@ -32,11 +35,22 @@
 <section id="guddalm" class="project">
     <h2>GuddaLM / Senojian</h2>
     <p>Dataset integration and evaluation tooling with PyTorch backends. Includes HDC accumulators, quantum bounds experiments, and benchmarking.</p>
+    <ul>
+        <li><strong>Papers/theory:</strong> <code>docs/</code>, <code>GUDDALM_ANALYSIS.md</code></li>
+        <li><strong>Experiments:</strong> <code>guddalm_hdnn</code>, <code>guddalm_llm</code>, <code>guddalm_hdc</code>, <code>guddalm_ast</code>, <code>guddalm_bnn</code>, <code>guddalm_genome</code>, <code>guddalm_chem</code>, <code>guddalm_gpu</code>, <code>guddalm_goal_daemon</code>, <code>guddalm_memory</code></li>
+        <li><strong>Data:</strong> <code>data/</code></li>
+    </ul>
     <figure>
         <a href="{{ get_url(path='/GuddaLM_Whitepaper.txt') }}">GuddaLM Whitepaper</a>
     </figure>
     <figure>
         <a href="{{ get_url(path='/A Unified Theory of High-Dimensional Semantic Routing and Memory Decoding.docx') }}">Unified Theory Paper</a>
     </figure>
+    <figure class="project-media">
+        <img src="{{ get_url(path='/GuddaLMFlowChart.png') }}" alt="GuddaLM flowchart">
+        <img src="{{ get_url(path='/Advanced_Charts_GuddaLM2.png') }}" alt="Advanced charts">
+        <img src="{{ get_url(path='/GuddaChemFlowChart.png') }}" alt="GuddaChem flowchart">
+    </figure>
+    <p><strong>Status:</strong> active research surface with multiple reproducible experiment tracks.</p>
 </section>
 {% endblock content %}
