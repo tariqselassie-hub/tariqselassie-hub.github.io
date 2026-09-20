@@ -12,16 +12,12 @@
     <h2>Selected Work</h2>
     <div class="grid">
         <article class="card">
-            <h3><a href="{{ get_url(path='/projects/') }}#zenith">Zenith Research Division</a></h3>
-            <p>VSA/HDC Rust workspace, kernel bring-up, NASME obfuscation, and hard-separation workspace hygiene.</p>
+            <h3><a href="{{ get_url(path='/projects/') }}#dtx">dtx</a></h3>
+            <p>Data transmission and execution workspace.</p>
         </article>
         <article class="card">
             <h3><a href="{{ get_url(path='/projects/') }}#vek2urity">Vek2urity</a></h3>
             <p>Standalone passive IDS workspace with bridge export contracts and future main-system compatibility.</p>
-        </article>
-        <article class="card">
-            <h3><a href="{{ get_url(path='/projects/') }}#guddalm">GuddaLM / Senojian</a></h3>
-            <p>Dataset integration, benchmark evaluation, and PyTorch-based quantum-inspired HDC prototypes.</p>
         </article>
     </div>
 </section>
@@ -37,14 +33,22 @@
 
 <section class="section">
     <h2>Terminal</h2>
-    <pre class="terminal">$ zenithd --status
-zenithd: active, localhost TLS enabled
+    <pre class="terminal">$ dtx --help
+Usage: dtx [OPTIONS] &lt;COMMAND&gt;
 
-$ zola build
-Building site...
-Done in 11ms.
+Commands:
+  run      Execute data transmission payload
+  verify   Validate deterministic execution
+  config   Manage workspace configuration
+  help     Print this message or the help of the given subcommand(s)
 
-$ gh repo create portfolio --public
-✓ created tariqselassie-hub/portfolio</pre>
+Options:
+  -v, --verbose  Enable verbose output
+  -h, --help     Print help
+  -V, --version  Print version
+
+$ dtx run --target localhost
+[dtx] Initializing deterministic execution...
+[dtx] Payload delivered successfully. (12ms)</pre>
 </section>
 {% endblock content %}
