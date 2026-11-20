@@ -1,54 +1,237 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="hero">
-    <img src="{{ get_url(path='/zenith_logo_3.png') }}" alt="Zenith logo" class="logo">
-    <h1>{{ page.title | default(value=config.title, true=true) }}</h1>
-    <p class="subtitle">Zenith Research Division &mdash; Detroit</p>
-    <p>{{ page.description | default(value=config.description, true=true) }}</p>
+<!-- ========================================================================
+     HERO: RESEARCH DIVIZION DETROIT
+     ======================================================================== -->
+<section class="hero-banner">
+    <img src="{{ get_url(path='/zenith_logo_3.png') }}" alt="Zenith Detroit Crest" class="hero-crest">
+    <h1 class="hero-title">Research Divizion Detroit</h1>
+    <p class="hero-subtitle">Sovereign Systems Engineering &bull; DeenOS Epistemic Architecture &bull; Heptal Computing</p>
+    <p class="hero-thesis">
+        Engineered by <strong>Tariq Selassie</strong>. Research Divizion Detroit establishes an unyielding systems research foundation 
+        grounded in physical silicon reality, high-order epistemic reasoning, 10,000-dimensional Vector Symbolic Architectures (GuddaLM VSA), 
+        and post-binary base-7 affine interaction combinators.
+    </p>
+    <div class="hero-badges">
+        <span class="badge badge-gold">[PHYSICAL SILICON rdtsc]</span>
+        <span class="badge badge-gold">[10,000-D GUDDALM VSA]</span>
+        <span class="badge badge-emerald">[DEEN 2.0 DAG ORCHESTRATOR]</span>
+        <span class="badge badge-emerald">[BASE-7 INTERACTION COMBINATORS]</span>
+        <span class="badge">[LEAN 4 MECHANIZED PROOFS]</span>
+        <span class="badge">[ZERO NETWORK CONTAINER ISOLATION]</span>
+    </div>
 </section>
 
-<section class="section">
-    <h2>Selected Work</h2>
-    <div class="grid">
-        <article class="card">
-            <h3><a href="{{ get_url(path='/projects/') }}#dtx">dtx</a></h3>
-            <p>Data transmission and execution workspace.</p>
+<!-- ========================================================================
+     THE THREE PILLARS OF SOVEREIGN COMPUTING
+     ======================================================================== -->
+<section class="content-section" id="pillars">
+    <div class="section-header">
+        <span class="section-label">Foundational Triad</span>
+        <h2 class="section-heading">Core Architectural Pillars</h2>
+        <p class="section-description">
+            Three mutually-reinforcing systems that bridge mathematical proof theory, cognitive agent orchestration, and hardware-native execution.
+        </p>
+    </div>
+
+    <div class="pillars-grid">
+        <!-- Pillar I: Research Divizion Detroit -->
+        <article class="pillar-card" id="zenith">
+            <span class="pillar-badge">Pillar I &bull; Research Lab</span>
+            <h3 class="pillar-title">Research Divizion Detroit</h3>
+            <p class="pillar-summary">
+                The systems research foundry. Focuses on high-dimensional computing (HDC/VSA), passive-link intrusion detection, 
+                and cycle-accurate physical reality attestation on CPU silicon.
+            </p>
+            <ul class="pillar-specs">
+                <li><strong>GuddaLM VSA:</strong> 10,000-D circular convolution MAP binding with sub-microsecond AVX2 L2 in-place normalization.</li>
+                <li><strong>Vek2urity:</strong> Network-facing passive anomaly monitor using seed <code>0xA5A5_5A5A</code> mix/sign projection and Shannon byte entropy.</li>
+                <li><strong>Hardware Profiling:</strong> Direct hardware Time Stamp Counter measurement (<code>rdtsc</code>) with 64-byte cache-line alignment.</li>
+                <li><strong>Hard Separation:</strong> Strict zero-symlink workspace hygiene with localhost/CLI IPC bridges.</li>
+            </ul>
+            <a href="{{ get_url(path='/projects/') }}#zenith" class="pillar-action">Inspect Lab Specs &rarr;</a>
         </article>
-        <article class="card">
-            <h3><a href="{{ get_url(path='/projects/') }}#vek2urity">Vek2urity</a></h3>
-            <p>Standalone passive IDS workspace with bridge export contracts and future main-system compatibility.</p>
+
+        <!-- Pillar II: DeenOS -->
+        <article class="pillar-card" id="deenos">
+            <span class="pillar-badge">Pillar II &bull; Epistemic OS</span>
+            <h3 class="pillar-title">DeenOS (Deen 2.0)</h3>
+            <p class="pillar-summary">
+                Autonomous terminal-and-web coding workstation and System 2 cognitive cortex. Replaces flat syntax-emitting LLM typists 
+                with an epistemic reasoning engine backed by a topological task DAG.
+            </p>
+            <ul class="pillar-specs">
+                <li><strong>Epistemic Controller:</strong> High-order reasoning cortex over 150 dense monographs and GuddaLM VSA AST role-filler codebooks.</li>
+                <li><strong>Autonomous Self-Healing:</strong> Topological DAG engine that intercepts errors and dynamically spawns repair sub-DAGs with <code>.deen.bak</code> atomic rollbacks.</li>
+                <li><strong>quantNN:</strong> 4D Hamilton quaternion neural networks with exact analytical backpropagation (&nabla;W = &nabla;Y &times; X*) on S&sup3;.</li>
+                <li><strong>Visual Verification (deen-visdiff):</strong> Zero-network headless CDP rendering with AVX2 pixel diffing and 10,000D perceptual hashing.</li>
+            </ul>
+            <a href="{{ get_url(path='/projects/') }}#deenos" class="pillar-action">Explore DeenOS Architecture &rarr;</a>
+        </article>
+
+        <!-- Pillar III: Heptal Computing -->
+        <article class="pillar-card" id="heptal">
+            <span class="pillar-badge">Pillar III &bull; Interaction Calculus</span>
+            <h3 class="pillar-title">Heptal Computing</h3>
+            <p class="pillar-summary">
+                Post-binary computing paradigm founded on linear logic, affine resource consumption, and concurrent interaction combinators 
+                for optimal hardware parallelism.
+            </p>
+            <ul class="pillar-specs">
+                <li><strong>7-Way Parallel Fork (!7):</strong> Replaces binary tree splitting (log&sub2; N) with an arity-7 concurrent fan-out (log&sub7; N), reducing reduction depth to ~7 levels for 10&sup6; nodes.</li>
+                <li><strong>BendTT Affine Linearity:</strong> Statically proves every variable is consumed at most once (&le; 1). Implicit duplication and contraction are formally banned.</li>
+                <li><strong>Affine Wire Demolition:</strong> Zero-cost memory reclamation without garbage collection; instant hardware register zeroing at end-of-life.</li>
+                <li><strong>Dual VM &amp; Formal Verification:</strong> 7 parallel reduction lanes mapped across 256-bit AVX2 SIMD registers, attested by mechanized Lean 4 proofs.</li>
+            </ul>
+            <a href="{{ get_url(path='/projects/') }}#heptal" class="pillar-action">Review Heptal Foundations &rarr;</a>
         </article>
     </div>
 </section>
 
-<section class="section">
-    <h2>Now</h2>
-    <ul>
-        <li>Scaffolding this portfolio with Zola</li>
-        <li>Documenting vek2urity passive capture workflow</li>
-        <li>Extending Zenith VSA/HDC benchmarks</li>
-    </ul>
+<!-- ========================================================================
+     HARDWARE TELEMETRY & TERMINAL BENCHMARKS
+     ======================================================================== -->
+<section class="content-section" id="telemetry">
+    <div class="section-header">
+        <span class="section-label">Empirical Validation</span>
+        <h2 class="section-heading">Bare-Metal Silicon Invariants</h2>
+        <p class="section-description">
+            Physical reality attestation over physical CPU hardware counters (<code>rdtsc</code>). Theoretical mathematical formulations 
+            are validated directly against register timing and cycle throughput.
+        </p>
+    </div>
+
+    <div class="deep-dive-grid">
+        <div class="terminal-block">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="terminal-title">deen_vm &bull; rdtsc hardware benchmark</div>
+            </div>
+            <pre class="terminal-body"><span class="terminal-prompt">$ deen-cli.exe --harness all</span>
+<span class="terminal-gold">===============================================================================
+DEEN 2.0 HARDWARE BENCHMARK: BINARY TWO'S-COMPLEMENT VS BALANCED TERNARY (H3)
+Iterations: 10,000,000 ops | Counter: x86_64 Hardware TSC
+===============================================================================</span>
+
+<span class="terminal-dim">[EXPERIMENT 1] Standard Binary Two's-Complement Arithmetic</span>
+  &bull; Wall Time:         6.834 ms
+  &bull; Total CPU Cycles:  16,276,903 cycles
+  &bull; Cycles / Op:       1.63 cycles/scalar op
+  &bull; Throughput:        1,463.23 Mops/sec
+
+<span class="terminal-green">[EXPERIMENT 2] Balanced Ternary (H3 = {-1, 0, +1}) Carry-Free Field</span>
+  &bull; Packed Density:    32 parallel trits per 64-bit ALU register
+  &bull; Total Trits:       320,000,000 trits processed
+  &bull; Cycles / Trit:     0.075 cycles/trit
+  &bull; Net Trit Speedup:  <span class="terminal-green">21.7x higher throughput per field element</span>
+
+<span class="terminal-prompt">$ deen-cli.exe --harness quaternion</span>
+  &bull; Quaternion Multiplication:    1,000,000 ops in 1.492 ms (1.49 ns/mul)
+  &bull; 3D Vector Rotation (q*v*q*):  1,000,000 ops in 2.210 ms (2.21 ns/rot)
+  &bull; Deep 3-Layer Network Forward: 100,000 samples in 3.120 ms (31.2 ns/sample)
+<span class="terminal-green">&check; ALL INVARIANTS SATISFIED &bull; ZERO DRIFT DETECTED</span></pre>
+        </div>
+
+        <div class="terminal-block">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="terminal-title">quantNN &bull; hamilton backprop training</div>
+            </div>
+            <pre class="terminal-body"><span class="terminal-prompt">$ cargo run -p quantnn_experiments --bin train_quantnn</span>
+<span class="terminal-gold">quantNN SOVEREIGN HYPERCOMPLEX NEURAL TRAINING HARNESS
+Hamilton Backpropagation | Lie Algebra SO(3) | Top-K &amp; MoE Sparsity</span>
+
+<span class="terminal-dim">[PHASE 1]: DATASET INGESTION &amp; QUATERNION MAPPING</span>
+  &bull; Source: Loaded 478 tokens from Cargo.toml
+  &bull; Ingested Tokens: 478 quaternions (16-byte SIMD aligned)
+
+<span class="terminal-dim">[PHASE 2]: ARCHITECTURE TOPOLOGY &amp; MOMENT REGISTRATION</span>
+  &bull; Hypercomplex Dimension (H^D): 16
+  &bull; Sequence Top-K Sparsity:      2 / 8 tokens (75.0%)
+  &bull; Parameter MoE Sparsity:       2 / 4 experts (50.0%)
+  &bull; Optimizer:                    QuaternionAdamW (lr=0.005)
+
+<span class="terminal-dim">[PHASE 3]: EXECUTING SOVEREIGN TRAINING RUN</span>
+Epoch    Loss (MSE+SO3) Grad Norm   Attn Spars.  MoE Spars.
+[1/10]   1.240037       1.4142      75.0%        50.0%
+[5/10]   0.353657       1.3782      75.0%        50.0%
+[10/10]  0.349343       1.3504      75.0%        50.0%
+
+<span class="terminal-green">&check; TRAINING COMPLETED: 71.83% Loss Reduction</span>
+<span class="terminal-green">&check; Invariant Attestation: Geodesic Norm Preserved on S^3</span></pre>
+        </div>
+    </div>
 </section>
 
-<section class="section">
-    <h2>Terminal</h2>
-    <pre class="terminal">$ dtx --help
-Usage: dtx [OPTIONS] &lt;COMMAND&gt;
+<!-- ========================================================================
+     RESEARCH ARTIFACTS & WHITEPAPERS
+     ======================================================================== -->
+<section class="content-section" id="artifacts">
+    <div class="section-header">
+        <span class="section-label">Publications &amp; Theory</span>
+        <h2 class="section-heading">Research Artifacts &amp; Technical Treatises</h2>
+        <p class="section-description">
+            Mathematical whitepapers, formal specifications, and architecture flowcharts published by Research Divizion Detroit.
+        </p>
+    </div>
 
-Commands:
-  run      Execute data transmission payload
-  verify   Validate deterministic execution
-  config   Manage workspace configuration
-  help     Print this message or the help of the given subcommand(s)
+    <div class="artifacts-grid">
+        <div class="artifact-card">
+            <div class="artifact-header">
+                <span class="artifact-icon">📜</span>
+                <h3 class="artifact-title">GuddaLM Whitepaper</h3>
+            </div>
+            <p class="artifact-desc">
+                Foundational treatise on 10,000-dimensional hyperdimensional computing, circular convolution binding, and semantic routing architectures.
+            </p>
+            <a href="{{ get_url(path='/GuddaLM_Whitepaper.txt') }}" class="artifact-link">Read Whitepaper (TXT) &rarr;</a>
+        </div>
 
-Options:
-  -v, --verbose  Enable verbose output
-  -h, --help     Print help
-  -V, --version  Print version
+        <div class="artifact-card">
+            <div class="artifact-header">
+                <span class="artifact-icon">📘</span>
+                <h3 class="artifact-title">A Unified Theory of High-Dimensional Semantic Routing</h3>
+            </div>
+            <p class="artifact-desc">
+                Mathematical formulation unifying Vector Symbolic Architectures (VSA), memory decoding manifolds, and post-quantum algebraic invariance.
+            </p>
+            <a href="{{ get_url(path='/A Unified Theory of High-Dimensional Semantic Routing and Memory Decoding.docx') }}" class="artifact-link">Download Unified Theory (DOCX) &rarr;</a>
+        </div>
 
-$ dtx run --target localhost
-[dtx] Initializing deterministic execution...
-[dtx] Payload delivered successfully. (12ms)</pre>
+        <div class="artifact-card">
+            <div class="artifact-header">
+                <span class="artifact-icon">🛡️</span>
+                <h3 class="artifact-title">Vek2urity Edge IDS Specification</h3>
+            </div>
+            <p class="artifact-desc">
+                Passive network telemetry, zero-packet-drop capture filters, and deterministic stratum quantization for autonomous cyber-surfaces.
+            </p>
+            <a href="{{ get_url(path='/Edge_IDS.png') }}" class="artifact-link">Inspect Network Telemetry &rarr;</a>
+        </div>
+    </div>
+
+    <div class="media-gallery">
+        <div class="media-card">
+            <img src="{{ get_url(path='/GuddaLMFlowChart.png') }}" alt="GuddaLM Architecture Flowchart">
+            <div class="media-caption">Figure 1: GuddaLM High-Dimensional Memory Decoding &amp; Routing Topology</div>
+        </div>
+        <div class="media-card">
+            <img src="{{ get_url(path='/Advanced_Charts_GuddaLM2.png') }}" alt="GuddaLM Advanced Benchmarks">
+            <div class="media-caption">Figure 2: Vector Dimension Scaling &amp; Associative Recall Benchmarks</div>
+        </div>
+        <div class="media-card">
+            <img src="{{ get_url(path='/GuddaChemFlowChart.png') }}" alt="GuddaChem Molecular Flowchart">
+            <div class="media-caption">Figure 3: GuddaChem Molecular Manifold &amp; Topological Graph Processing</div>
+        </div>
+    </div>
 </section>
 {% endblock content %}

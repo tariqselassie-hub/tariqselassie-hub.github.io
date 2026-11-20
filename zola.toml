@@ -1,8 +1,11 @@
 base_url = "https://tariqselassie-hub.github.io"
-title = "System Engineering Portfolio"
-description = "System engineering portfolio and research"
+title = "Research Divizion Detroit"
+description = "Sovereign Systems Engineering, DeenOS Epistemic Architecture, GuddaLM VSA, and Heptal Affine Computing."
 default_language = "en"
 
 [extra]
 author_name = "Tariq Selassie"
 author_email = "tariqselassie-hub@users.noreply.github.com"
+division = "Research Divizion Detroit"
+tagline = "Physical Reality Attestation • Epistemic Architecture • Heptal Computing"
+location = "Detroit, MI"

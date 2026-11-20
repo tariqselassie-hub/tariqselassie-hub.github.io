@@ -1,8 +1,83 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>About</h1>
-<p>System engineer focused on deterministic architectures, binary protocols, and compute-bound research tooling.</p>
-<p>Strong preference for Rust, static toolchains, reproducible build steps, and explicit failure modes.</p>
-<p>Contact: <a href="mailto:tariqselassie-hub@users.noreply.github.com">tariqselassie-hub@users.noreply.github.com</a></p>
+<section class="hero-banner" style="padding-bottom: 30px;">
+    <h1 class="hero-title">About Tariq Selassie</h1>
+    <p class="hero-subtitle">Systems Engineer &bull; Chief Architect &bull; Research Divizion Detroit</p>
+    <p class="hero-thesis">
+        Focused on physical silicon reality, deterministic agent architectures, high-dimensional computing, 
+        and post-binary affine interaction combinators. Based in Detroit, Michigan.
+    </p>
+</section>
+
+<section class="content-section">
+    <div class="deep-dive">
+        <h2 class="pillar-title" style="font-size: 1.6rem;">Engineering Philosophy</h2>
+        <p class="pillar-summary">
+            Software engineering must supersede statistical approximations by enforcing strict physical reality attestation. 
+            Claims of algorithmic superiority or performance must be physically proven on bare CPU silicon using cycle-level hardware 
+            Time Stamp Counters (<code>rdtsc</code>).
+        </p>
+
+        <ul class="pillar-specs">
+            <li>
+                <strong>Physical Reality Attestation:</strong>
+                Zero hand-waving benchmarks. Every instruction word, cache-line alignment, and SIMD kernel is measured at the physical clock cycle level.
+            </li>
+            <li>
+                <strong>Epistemic Task Governance:</strong>
+                Refuses flat syntax-emitting wrappers. Tasks are formulated as topological Directed Acyclic Graphs (DAGs) with autonomous self-healing loops and atomic <code>.deen.bak</code> sandboxes.
+            </li>
+            <li>
+                <strong>Affine Resource Conservation:</strong>
+                Variables must obey linear logic constraints (&le; 1). Resources are reclaimed instantaneously upon affine wire demolition without garbage collection stalls.
+            </li>
+            <li>
+                <strong>Sovereign Design &amp; Hard Isolation:</strong>
+                Zero external dependencies in production. Embedded singlefile distributions with strict container isolation (<code>--network none</code>).
+            </li>
+        </ul>
+    </div>
+
+    <div class="deep-dive">
+        <h2 class="pillar-title" style="font-size: 1.6rem;">Primary Research Surfaces</h2>
+        <div class="pillars-grid" style="margin-top: 20px;">
+            <div class="artifact-card">
+                <h3 class="artifact-title">Research Divizion Detroit (Zenith)</h3>
+                <p class="artifact-desc">
+                    High-dimensional Vector Symbolic Architecture (10,000-D GuddaLM VSA), passive network anomaly monitoring (Vek2urity), 
+                    and physical CPU profiling harnesses.
+                </p>
+            </div>
+            <div class="artifact-card">
+                <h3 class="artifact-title">DeenOS (Deen 2.0)</h3>
+                <p class="artifact-desc">
+                    The Sovereign Epistemic Controller, autonomous self-healing DAG orchestrator, NumRust CPU tensor engine, 
+                    and 4D Hamilton quaternion neural network (quantNN).
+                </p>
+            </div>
+            <div class="artifact-card">
+                <h3 class="artifact-title">Heptal Computing</h3>
+                <p class="artifact-desc">
+                    Base-7 interaction combinators, arity-7 concurrent reduction fan-out (!7), BendTT affine linearity verification, 
+                    and mechanized Lean 4 formal proofs.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="deep-dive">
+        <h2 class="pillar-title" style="font-size: 1.6rem;">Direct Contact &amp; Verification</h2>
+        <p class="pillar-summary">
+            Direct institutional and technical correspondence:
+        </p>
+        <ul class="pillar-specs">
+            <li><strong>Author:</strong> Tariq Selassie</li>
+            <li><strong>Organization:</strong> Research Divizion Detroit (Zenith Detroit)</li>
+            <li><strong>Email:</strong> <a href="mailto:{{ config.extra.author_email }}">{{ config.extra.author_email }}</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/tariqselassie-hub" target="_blank" rel="noopener">github.com/tariqselassie-hub</a></li>
+            <li><strong>Primary Hub:</strong> <a href="{{ config.base_url }}">{{ config.base_url }}</a></li>
+        </ul>
+    </div>
+</section>
 {% endblock content %}

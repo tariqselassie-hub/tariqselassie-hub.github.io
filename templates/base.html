@@ -3,25 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ config.description }}">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <link rel="stylesheet" href="{{ get_url(path='/main.css') }}">
+    <link rel="icon" type="image/png" href="{{ get_url(path='/zenith_logo_3.png') }}">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="{{ get_url(path='/') }}">{{ config.title }}</a>
-            <span>
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="brand-group">
+                <a href="{{ get_url(path='/') }}">
+                    <img src="{{ get_url(path='/zenith_logo_3.png') }}" alt="Zenith Detroit Logo">
+                </a>
+                <a href="{{ get_url(path='/') }}" class="brand-title">Research Divizion Detroit</a>
+                <span class="brand-tag">Zenith</span>
+            </div>
+            <nav class="main-nav">
+                <a href="{{ get_url(path='/') }}">Overview</a>
+                <a href="{{ get_url(path='/') }}#zenith">Divizion</a>
+                <a href="{{ get_url(path='/') }}#deenos">DeenOS</a>
+                <a href="{{ get_url(path='/') }}#heptal">Heptal Computing</a>
+                <a href="{{ get_url(path='/projects/') }}">Projects &amp; Papers</a>
                 <a href="{{ get_url(path='/about/') }}">About</a>
-                <a href="{{ get_url(path='/projects/') }}">Projects</a>
-                <a href="mailto:tariqselassie-hub@users.noreply.github.com">Contact</a>
-            </span>
-        </nav>
+            </nav>
+        </div>
     </header>
-    <main>
+
+    <main class="main-content">
         {% block content %}{% endblock content %}
     </main>
-    <footer>
-        <p>&copy; {{ now() | date(format="%Y") }} {{ config.extra.author_name }}</p>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">{{ config.title }}</div>
+            <p class="footer-details">
+                Founded &amp; Engineered by <strong>{{ config.extra.author_name }}</strong> &bull; {{ config.extra.location }}<br>
+                Physical Reality Attestation &bull; Affine Interaction Combinators &bull; Epistemic Architecture
+            </p>
+            <div class="footer-nav">
+                <a href="{{ get_url(path='/') }}">Home</a>
+                <a href="{{ get_url(path='/projects/') }}">Projects</a>
+                <a href="{{ get_url(path='/about/') }}">About</a>
+                <a href="mailto:{{ config.extra.author_email }}">Direct Contact</a>
+            </div>
+            <p class="footer-details" style="font-size: 0.8rem; opacity: 0.6;">
+                &copy; {{ now() | date(format="%Y") }} {{ config.extra.author_name }}. All sovereign invariants attested on bare silicon.
+            </p>
+        </div>
     </footer>
 </body>
 </html>
