@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} &bull; {{ config.title }}{% endblock title %}
+
+{% block content %}
+<!-- KaTeX Mathematical Typesetting -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+
+<article class="academic-paper">
+    <!-- Paper Header -->
+    <header class="paper-header">
+        <div class="paper-meta-badge">RESEARCH TREATISE &bull; ARCHITECTURAL SPECIFICATION</div>
+        <h1 class="paper-title">{{ page.title }}</h1>
+        {% if page.extra.subtitle %}
+        <p class="paper-subtitle">{{ page.extra.subtitle }}</p>
+        {% endif %}
+        
+        <div class="author-block">
+            <div class="author-name">{{ page.extra.author | default(value=config.extra.author_name) }}</div>
+            <div class="author-affiliation">{{ page.extra.affiliation | default(value="Research Divizion Detroit") }} &bull; Detroit, Michigan</div>
+            <div class="paper-date">Published: {{ page.date | date(format="%B %Y") }} &bull; Invariant Attestation: Physical Silicon rdtsc</div>
+        </div>
+
+        <div class="paper-actions">
+            <a href="{{ get_url(path='/A Unified Theory of High-Dimensional Semantic Routing and Memory Decoding.docx') }}" class="btn-action">
+                <span>⬇️</span> Download Original Monograph (DOCX)
+            </a>
+            <a href="{{ get_url(path='/GuddaLM_Whitepaper.txt') }}" class="btn-action">
+                <span>📄</span> Plain-Text Whitepaper (TXT)
+            </a>
+        </div>
+    </header>
+
+    <!-- Paper Body -->
+    <div class="paper-body">
+        {{ page.content | safe }}
+    </div>
+
+    <!-- Embedded Figures Section -->
+    <section class="paper-figures">
+        <h2 class="section-heading" style="font-size: 1.5rem; margin-bottom: 20px;">Architecture Diagrams &amp; Empirical Charts</h2>
+        <div class="media-gallery">
+            <div class="media-card">
+                <a href="{{ get_url(path='/GuddaLMFlowChart.png') }}" target="_blank">
+                    <img src="{{ get_url(path='/GuddaLMFlowChart.png') }}" alt="GuddaLM Memory Decoding &amp; Routing Topology">
+                </a>
+                <div class="media-caption"><strong>Figure 1:</strong> GuddaLM Hybrid L1/L2 Memory Decoding Topology</div>
+            </div>
+            <div class="media-card">
+                <a href="{{ get_url(path='/Advanced_Charts_GuddaLM2.png') }}" target="_blank">
+                    <img src="{{ get_url(path='/Advanced_Charts_GuddaLM2.png') }}" alt="Capacity Cliff &amp; Resonator Benchmarks">
+                </a>
+                <div class="media-caption"><strong>Figure 2:</strong> VSA Capacity Cliff &amp; Resonator Convergence Benchmarks</div>
+            </div>
+            <div class="media-card">
+                <a href="{{ get_url(path='/GuddaChemFlowChart.png') }}" target="_blank">
+                    <img src="{{ get_url(path='/GuddaChemFlowChart.png') }}" alt="GuddaChem Molecular Flowchart">
+                </a>
+                <div class="media-caption"><strong>Figure 3:</strong> GuddaChem Topological Graph &amp; Molecular Resonator Flow</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paper Footer / Back to Hub -->
+    <div class="paper-nav-footer">
+        <a href="{{ get_url(path='/') }}" class="btn-action">&larr; Back to Research Divizion Hub</a>
+        <a href="{{ get_url(path='/projects/') }}" class="btn-action">View All Projects &rarr;</a>
+    </div>
+</article>
+
+<style>
+.academic-paper {
+    max-width: 860px;
+    margin: 40px auto;
+    background: #090e15;
+    border: 1px solid var(--panel-border);
+    border-radius: var(--border-radius-lg);
+    padding: 48px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.paper-header {
+    border-bottom: 2px solid var(--panel-border);
+    padding-bottom: 32px;
+    margin-bottom: 36px;
+    text-align: center;
+}
+
+.paper-meta-badge {
+    font-size: 0.75rem;
+    font-family: ui-monospace, monospace;
+    font-weight: 700;
+    color: var(--gold-bright);
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+}
+
+.paper-title {
+    font-size: 2.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    color: #ffffff;
+}
+
+.paper-subtitle {
+    font-size: 1.2rem;
+    color: var(--gold-bright);
+    font-weight: 600;
+    margin: 0 0 24px;
+    line-height: 1.4;
+}
+
+.author-block {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--panel-border);
+    border-radius: var(--border-radius-sm);
+    padding: 14px;
+    margin-bottom: 24px;
+}
+
+.author-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.author-affiliation {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+.paper-date {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+}
+
+.paper-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--panel-bg);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-bright);
+    border-radius: var(--border-radius-sm);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.btn-action:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--gold-primary);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Paper Body Typography */
+.paper-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.paper-body h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 36px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 6px;
+}
+
+.paper-body h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--gold-bright);
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.paper-body h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.paper-body p {
+    margin-bottom: 18px;
+}
+
+.paper-body blockquote {
+    background: rgba(212, 175, 55, 0.08);
+    border-left: 4px solid var(--gold-primary);
+    padding: 12px 18px;
+    margin: 20px 0;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+    color: #e2e8f0;
+}
+
+.paper-body pre {
+    background: #040608;
+    border: 1px solid var(--panel-border);
+    padding: 14px;
+    border-radius: var(--border-radius-sm);
+    overflow-x: auto;
+    font-size: 0.88rem;
+    color: #94a3b8;
+}
+
+.paper-figures {
+    margin-top: 50px;
+    padding-top: 32px;
+    border-top: 2px solid var(--panel-border);
+}
+
+.paper-nav-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--panel-border);
+}
+
+@media (max-width: 768px) {
+    .academic-paper {
+        padding: 24px 18px;
+    }
+    .paper-title {
+        font-size: 1.8rem;
+    }
+}
+</style>
+{% endblock content %}

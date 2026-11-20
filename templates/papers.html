@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-banner" style="padding-bottom: 30px;">
+    <h1 class="hero-title">Research Papers &amp; Treatises</h1>
+    <p class="hero-subtitle">Mathematical Foundations &bull; Vector Symbolic Architectures &bull; System Specifications</p>
+    <p class="hero-thesis">
+        Formal papers, monographs, and whitepapers published by Research Divizion Detroit. 
+        Available in interactive browser reading format, downloadable DOCX, and raw plain text.
+    </p>
+</section>
+
+<section class="content-section">
+    <div class="artifacts-grid">
+        <div class="artifact-card" style="grid-column: 1 / -1;">
+            <div class="artifact-header">
+                <span class="artifact-icon">📘</span>
+                <div>
+                    <h3 class="artifact-title" style="font-size: 1.35rem;">
+                        <a href="{{ get_url(path='/papers/unified-theory/') }}">GuddaLM: The Hybrid Vector Symbolic Architecture</a>
+                    </h3>
+                    <p style="color: var(--gold-bright); font-size: 0.95rem; margin: 2px 0 0;">
+                        A Unified Theory of High-Dimensional Semantic Routing and Memory Decoding
+                    </p>
+                </div>
+            </div>
+            <p class="artifact-desc" style="font-size: 0.95rem; margin: 12px 0 20px;">
+                Substitute non-deterministic backpropagation with 4096-dimensional Vector Symbolic Architectures. 
+                Introduces hierarchical dual-level memory caching: Position Permutation Macro-Routing (100% retrieval accuracy up to 75 slots) 
+                fused with Resonator Network Micro-Decoding (&lt; 4 factor limit in sub-millisecond convergence).
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a href="{{ get_url(path='/papers/unified-theory/') }}" class="btn-action">
+                    📖 Read Online (Interactive Reader with LaTeX) &rarr;
+                </a>
+                <a href="{{ get_url(path='/A Unified Theory of High-Dimensional Semantic Routing and Memory Decoding.docx') }}" class="btn-action">
+                    ⬇️ Download DOCX
+                </a>
+                <a href="{{ get_url(path='/GuddaLM_Whitepaper.txt') }}" class="btn-action">
+                    📄 Plain-Text Whitepaper
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
